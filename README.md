@@ -185,10 +185,8 @@ perdida com um cliente recusado, relação que não se sustenta em nenhum dos ou
 3. **É mais barata de operar.** O KNN exige padronização, guarda a base de treino inteira e faz 11
    comparações de distância por cliente; a árvore percorre no máximo 10 cortes.
 
-### Contrapontos ao modelo de Árvore de Decisão
+### Contraponto ao modelo de Árvore de Decisão
 
 - A Árvore ainda deixa passar 352 dos 1.418 inadimplentes da carteira de teste. Com recall de
   75,18%, esse é o problema real que sobra.
-- O próximo passo é calibrar o ponto de corte. Com precisão alta (78,61%) e recall mediano,
-  deslocar o limiar na direção dos inadimplentes compra recall ao preço de mais falsos positivos.
 ---
