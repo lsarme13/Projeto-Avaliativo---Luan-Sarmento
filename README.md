@@ -45,7 +45,7 @@ Responder "paga" para todo mundo já acerta 78% da base. O objetivo do modelo é
 
 ### Veredito
 
-**A Árvore de Decisão vai para produção.** Acerta **90,10%** da base de teste, tem F1 de 76,86% na
+A Árvore de Decisão vai para produção. Acerta **90,10%** da base de teste, tem F1 de 76,86% na
 classe dos inadimplentes e é mais barata em **14 dos 16 cenários financeiros** simulados. O KNN
 acerta um pouco mais dos inadimplentes (recall de 77,50% contra 75,18%), mas custa US$ 4,8 milhões
 a mais em crédito indevidamente barrado para evitar 33 defaults.
@@ -70,7 +70,7 @@ Base: `credit_risk_dataset.csv` — 32.581 linhas × 12 variáveis.
 | `loan_percent_income` | Numérica | Percentual da renda comprometida (percent) |
 | `cb_person_default_on_file` | Categórica | Default registrado no histórico de crédito |
 | `cb_person_cred_hist_length` | Numérica | Tamanho do histórico de crédito (anos) |
-| **`comprometimento_renda`** | **Numérica (criada)** | **`(loan_amnt / person_income) × 100`** |
+| `comprometimento_renda` | Numérica (criada) | `(loan_amnt / person_income) × 100` |
 
 ### Colunas auxiliares geradas no pipeline
 
@@ -83,7 +83,7 @@ Base: `credit_risk_dataset.csv` — 32.581 linhas × 12 variáveis.
 
 `comprometimento_renda` traduz a comparação entre valor solicitado e renda em um único número
 interpretável — algo que a soma ou a subtração não permitiria, por serem grandezas de unidades
-diferentes. Ela é a variável com **maior correlação com o alvo de toda a base (r = 0,3862)**.
+diferentes. Ela é a variável com maior correlação com o alvo de toda a base (r = 0,3862).
 
 Sua correlação com `loan_percent_income` é de 0,9989: as duas carregam a mesma informação em escalas
 diferentes. Manter ambas é uma decisão consciente, com um custo e um benefício de cada lado — no
@@ -191,5 +191,4 @@ perdida com um cliente recusado, relação que não se sustenta em nenhum dos ou
   75,18%, esse é o problema real que sobra.
 - O próximo passo é calibrar o ponto de corte. Com precisão alta (78,61%) e recall mediano,
   deslocar o limiar na direção dos inadimplentes compra recall ao preço de mais falsos positivos.
-
 ---
